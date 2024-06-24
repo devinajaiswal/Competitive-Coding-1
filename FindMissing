@@ -1,0 +1,24 @@
+Time complexity - O(log n))
+Space complexity - O(1)
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var missingNumber = function(nums) {
+   let low = 0;
+    let high = nums.length;
+
+    while (low < high) {
+        let mid = Math.floor((low + high) / 2);
+
+         if(nums[mid]>mid){
+            high=mid
+        }
+        else{
+            low=mid+1
+        }
+    }    
+    return low;
+    
+};
